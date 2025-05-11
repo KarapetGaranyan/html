@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Путешествие в Японию</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #e74c3c;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/api/placeholder/1200/400');
+            background-size: cover;
+            background-position: center;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #e74c3c;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        h1, h2, h3 {
+            color: #e74c3c;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-top: 2rem;
+            border-bottom: 2px solid #e74c3c;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.6rem;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 2rem auto;
+        }
+
+        .image-caption {
+            text-align: center;
+            font-style: italic;
+            margin-top: -1.5rem;
+            margin-bottom: 2rem;
+            color: #666;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(231, 76, 60, 0.75), rgba(0, 0, 0, 0));
+            margin: 3rem 0;
+        }
+
+        .highlight-box {
+            background-color: #fef9e7;
+            border-left: 5px solid #f1c40f;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .two-column {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .column {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer a {
+            color: #e74c3c;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Путешествие в Японию</h1>
+        <p>Откройте для себя страну восходящего солнца</p>
+    </header>
+
+    <nav>
+        <a href="#culture">Культура</a>
+        <a href="#food">Кухня</a>
+        <a href="#attractions">Достопримечательности</a>
+        <a href="#travel-tips">Советы путешественникам</a>
+    </nav>
+
+    <div class="container">
+        <section class="intro">
+            <h2>Добро пожаловать в Японию</h2>
+            <p>Япония - удивительная страна, где древние традиции гармонично сочетаются с передовыми технологиями. От величественных храмов и садов до шумных мегаполисов и захватывающих дух горных пейзажей - здесь каждый найдет что-то особенное для себя.</p>
+            <img src="/api/placeholder/1000/600" alt="Вид на гору Фудзи">
+            <p class="image-caption">Священная гора Фудзи - символ Японии</p>
+        </section>
+
+        <hr>
+
+        <section id="culture">
+            <h2>Культура и традиции</h2>
+            <p>Японская культура базируется на гармонии, почтении к предкам и внимании к деталям. Здесь уважение и вежливость стоят на первом месте, а древние традиции бережно сохраняются на протяжении веков.</p>
+
+            <div class="two-column">
+                <div class="column">
+                    <h3>Чайная церемония</h3>
+                    <img src="/api/placeholder/500/300" alt="Японская чайная церемония">
+                    <p>Чайная церемония (или Тя-но ю) - это древний ритуал приготовления и подачи зеленого чая матча. В этой церемонии важен не только сам чай, но и атмосфера гармонии, уважения и спокойствия.</p>
+                </div>
+
+                <div class="column">
+                    <h3>Искусство икебаны</h3>
+                    <img src="/api/placeholder/500/300" alt="Икебана - японское искусство аранжировки цветов">
+                    <p>Икебана - традиционное японское искусство аранжировки цветов. В отличие от европейской флористики, икебана подчеркивает линии, форму и минимализм, создавая гармоничную композицию из небольшого количества элементов.</p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Знаете ли вы?</h3>
+                <p>В Японии существует концепция "ваби-саби" - эстетическое мировоззрение, которое находит красоту в несовершенстве, непостоянстве и незавершенности. Это отражается во многих аспектах японской культуры: от керамики до садового дизайна и поэзии.</p>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="food">
+            <h2>Японская кухня</h2>
+            <p>Японская кухня, признанная ЮНЕСКО нематериальным культурным наследием человечества, славится свежестью ингредиентов, точностью приготовления и эстетической подачей блюд.</p>
+
+            <img src="/api/placeholder/900/500" alt="Ассорти японских блюд">
+            <p class="image-caption">Разнообразие японской кухни</p>
+
+            <h3>Популярные блюда</h3>
+            <div class="two-column">
+                <div class="column">
+                    <h3>Суши и сашими</h3>
+                    <p>Суши - это рис, приправленный уксусом и дополненный различными ингредиентами, чаще всего морепродуктами. Сашими - тонко нарезанная сырая рыба или морепродукты, которые подаются без риса. Оба блюда едят с соевым соусом, васаби и маринованным имбирем.</p>
+                </div>
+
+                <div class="column">
+                    <h3>Рамен</h3>
+                    <p>Рамен - популярный суп с лапшой, мясным или рыбным бульоном и различными добавками: от мяса и яиц до водорослей и зеленого лука. Существует множество региональных вариаций рамена с разными вкусами бульона.</p>
+                </div>
+            </div>
+
+            <a href="https://www.japan-guide.com/e/e2036.html" target="_blank">Узнать больше о японской кухне</a>
+        </section>
+
+        <hr>
+
+        <section id="attractions">
+            <h2>Главные достопримечательности</h2>
+
+            <h3>Токио - столица контрастов</h3>
+            <img src="/api/placeholder/1000/600" alt="Токио ночью">
+            <p class="image-caption">Токио - современный мегаполис с многовековой историей</p>
+            <p>Токио, столица Японии, представляет собой удивительное сочетание ультрасовременных небоскребов и древних храмов. Здесь вы найдете оживленный район Сибуя с его знаменитым перекрестком, футуристический Одайба, традиционные сады, множество музеев и очень много необычных тематических кафе.</p>
+
+            <h3>Киото - сердце традиционной Японии</h3>
+            <img src="/api/placeholder/1000/600" alt="Храм Киёмидзу-дэра в Киото">
+            <p class="image-caption">Храм Киёмидзу-дэра - объект Всемирного наследия ЮНЕСКО</p>
+            <p>Киото, бывшая столица Японии, является сокровищницей японской культуры. Здесь находятся более 1600 буддийских храмов, 400 синтоистских святилищ, прекрасные сады и дворцы. Район Гион известен как место, где можно увидеть настоящих гейш и майко (учениц гейш).</p>
+
+            <div class="highlight-box">
+                <h3>Лучшее время для посещения</h3>
+                <p>Япония прекрасна в любое время года, но особенно популярны два сезона: весна (конец марта - начало апреля), когда цветет сакура, и осень (ноябрь), когда листья клёнов окрашиваются в яркие красные и оранжевые цвета.</p>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="travel-tips">
+            <h2>Советы путешественникам</h2>
+
+            <div class="two-column">
+                <div class="column">
+                    <h3>Транспорт</h3>
+                    <p>Япония известна своей эффективной системой общественного транспорта. Japan Rail Pass - отличный вариант для туристов, планирующих много перемещаться по стране. Он позволяет неограниченно пользоваться большинством поездов JR, включая скоростные поезда Синкансэн.</p>
+                </div>
+
+                <div class="column">
+                    <h3>Этикет</h3>
+                    <p>В Японии большое внимание уделяется этикету. Снимайте обувь перед входом в традиционные дома, рёканы и некоторые рестораны. Не оставляйте чаевых - в Японии это не принято. Старайтесь говорить тихо в общественном транспорте и избегайте разговоров по телефону в поездах.</p>
+                </div>
+            </div>
+
+            <img src="/api/placeholder/900/500" alt="Японский скоростной поезд Синкансэн">
+            <p class="image-caption">Синкансэн - быстрый и удобный способ путешествовать по Японии</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Путешествие в Японию</p>
+        <p>Эта страница создана в демонстрационных целях.</p>
+        <p>Для получения актуальной информации о путешествиях в Японию посетите <a href="https://www.japan.travel/ru/ru/" target="_blank">официальный туристический сайт Японии</a>.</p>
+    </footer>
+</body>
+</html>
