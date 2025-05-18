@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рейтинг моих любимых блюд</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #f5f5f5;
+            font-weight: bold;
+            color: #333;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        img:hover {
+            transform: scale(1.1);
+        }
+        .rating {
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: white;
+        }
+        .high {
+            background-color: #4CAF50;
+        }
+        .medium {
+            background-color: #FFC107;
+        }
+        .low {
+            background-color: #F44336;
+        }
+        a {
+            color: #2196F3;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #0D47A1;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Рейтинг моих любимых блюд</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Название блюда</th>
+                <th>Оценка (1-10)</th>
+                <th>Рецепт</th>
+                <th>Фото</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Борщ украинский</td>
+                <td><span class="rating high">9</span></td>
+                <td><a href="https://www.russianfood.com/recipes/recipe.php?rid=151048" target="_blank">Смотреть рецепт</a></td>
+                <td><img src="./images/1.jpg" alt="Борщ украинский"></td>
+            </tr>
+            <tr>
+                <td>Лазанья</td>
+                <td><span class="rating high">10</span></td>
+                <td><a href="https://www.russianfood.com/recipes/recipe.php?rid=173857" target="_blank">Смотреть рецепт</a></td>
+                <td><img src="./images/2.jpg" alt="Лазанья"></td>
+            </tr>
+            <tr>
+                <td>Суши роллы Филадельфия</td>
+                <td><span class="rating high">8</span></td>
+                <td><a href="https://www.russianfood.com/recipes/recipe.php?rid=119931" target="_blank">Смотреть рецепт</a></td>
+                <td><img src="./images/3.jpg" alt="Суши роллы Филадельфия"></td>
+            </tr>
+            <tr>
+                <td>Окрошка на квасе</td>
+                <td><span class="rating medium">7</span></td>
+                <td><a href="https://www.russianfood.com/recipes/recipe.php?rid=173835" target="_blank">Смотреть рецепт</a></td>
+                <td><img src="./images/4.jpg" alt="Окрошка на квасе"></td>
+            </tr>
+            <tr>
+                <td>Цезарь с курицей</td>
+                <td><span class="rating high">9</span></td>
+                <td><a href="https://www.russianfood.com/recipes/recipe.php?rid=134218" target="_blank">Смотреть рецепт</a></td>
+                <td><img src="./images/5.jpg" alt="Цезарь с курицей"></td>
+            </tr>
+            <tr>
+                <td>Овсяная каша</td>
+                <td><span class="rating medium">6</span></td>
+                <td><a href="https://www.russianfood.com/recipes/recipe.php?rid=166036" target="_blank">Смотреть рецепт</a></td>
+                <td><img src="./images/6.jpg" alt="Овсяная каша"></td>
+            </tr>
+            <tr>
+                <td>Паста карбонара</td>
+                <td><span class="rating high">9</span></td>
+                <td><a href="https://www.russianfood.com/recipes/recipe.php?rid=144458" target="_blank">Смотреть рецепт</a></td>
+                <td><img src="./images/7.jpg" alt="Паста карбонара"></td>
+            </tr>
+            <tr>
+                <td>Гороховый суп</td>
+                <td><span class="rating low">4</span></td>
+                <td><a href="https://www.russianfood.com/recipes/recipe.php?rid=166857" target="_blank">Смотреть рецепт</a></td>
+                <td><img src="./images/8.jpg" alt="Гороховый суп"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
