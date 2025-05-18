@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карточки пользователей</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 20px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            width: 320px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            top: 0;
+        }
+
+        .card:hover {
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            transform: translateY(-10px);
+            background-color: #f8f9ff;
+        }
+
+        .card:hover .user-photo img {
+            transform: scale(1.05);
+        }
+
+        .card:hover .user-name {
+            color: #3498db;
+        }
+
+        .user-photo {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .user-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .user-info {
+            padding: 20px;
+        }
+
+        .user-name {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .user-detail {
+            display: flex;
+            margin-bottom: 8px;
+            align-items: center;
+        }
+
+        .detail-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            color: #3498db;
+        }
+
+        .detail-text {
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: #3498db;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover .card-badge {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Специальные стили для каждой карточки */
+        .card:nth-child(1) .user-photo {
+            border-bottom: 4px solid #3498db;
+        }
+
+        .card:nth-child(2) .user-photo {
+            border-bottom: 4px solid #e74c3c;
+        }
+
+        .card:nth-child(3) .user-photo {
+            border-bottom: 4px solid #2ecc71;
+        }
+
+        /* Респонсивный дизайн */
+        @media (max-width: 768px) {
+            .cards-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Профили пользователей</h1>
+
+    <div class="cards-container">
+        <!-- Первая карточка -->
+        <div class="card">
+            <div class="user-photo">
+                <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Анна Смирнова">
+            </div>
+            <div class="user-info">
+                <h2 class="user-name">Анна Смирнова</h2>
+
+                <div class="user-detail">
+                    <div class="detail-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <div class="detail-text">anna.smirnova@example.com</div>
+                </div>
+
+                <div class="user-detail">
+                    <div class="detail-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <div class="detail-text">15.06.1992</div>
+                </div>
+
+                <div class="user-detail">
+                    <div class="detail-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <div class="detail-text">Москва</div>
+                </div>
+            </div>
+            <div class="card-badge">Дизайнер</div>
+        </div>
+
+        <!-- Вторая карточка -->
+        <div class="card">
+            <div class="user-photo">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Иван Петров">
+            </div>
+            <div class="user-info">
+                <h2 class="user-name">Иван Петров</h2>
+
+                <div class="user-detail">
+                    <div class="detail-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <div class="detail-text">ivan.petrov@example.com</div>
+                </div>
+
+                <div class="user-detail">
+                    <div class="detail-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <div class="detail-text">23.02.1985</div>
+                </div>
+
+                <div class="user-detail">
+                    <div class="detail-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <div class="detail-text">Санкт-Петербург</div>
+                </div>
+            </div>
+            <div class="card-badge">Разработчик</div>
+        </div>
+
+        <!-- Третья карточка -->
+        <div class="card">
+            <div class="user-photo">
+                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Екатерина Иванова">
+            </div>
+            <div class="user-info">
+                <h2 class="user-name">Екатерина Иванова</h2>
+
+                <div class="user-detail">
+                    <div class="detail-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <div class="detail-text">ekaterina.ivanova@example.com</div>
+                </div>
+
+                <div class="user-detail">
+                    <div class="detail-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <div class="detail-text">07.11.1990</div>
+                </div>
+
+                <div class="user-detail">
+                    <div class="detail-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <div class="detail-text">Казань</div>
+                </div>
+            </div>
+            <div class="card-badge">Маркетолог</div>
+        </div>
+
+        <!-- Четвертая карточка -->
+        <div class="card">
+            <div class="user-photo">
+                <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Алексей Козлов">
+            </div>
+            <div class="user-info">
+                <h2 class="user-name">Алексей Козлов</h2>
+
+                <div class="user-detail">
+                    <div class="detail-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <div class="detail-text">alexey.kozlov@example.com</div>
+                </div>
+
+                <div class="user-detail">
+                    <div class="detail-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <div class="detail-text">19.03.1988</div>
+                </div>
+
+                <div class="user-detail">
+                    <div class="detail-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <div class="detail-text">Новосибирск</div>
+                </div>
+            </div>
+            <div class="card-badge">Аналитик</div>
+        </div>
+    </div>
+</body>
+</html>
