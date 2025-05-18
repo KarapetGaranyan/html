@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Главная - Flask Проект{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="jumbotron bg-light p-5 rounded">
+            <h1 class="display-4">Добро пожаловать в Flask Проект!</h1>
+            <p class="lead">Это простое многостраничное приложение, созданное с использованием Flask и Bootstrap.</p>
+            <hr class="my-4">
+            <p>Изучайте Flask, создавайте свои веб-приложения и развивайтесь в веб-разработке.</p>
+            <a class="btn btn-primary btn-lg" href="{{ url_for('blog') }}">Перейти к блогу</a>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <h3 class="card-title">Простота</h3>
+                <p class="card-text">Flask — это микрофреймворк, который легко освоить и быстро начать использовать для создания веб-приложений.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <h3 class="card-title">Гибкость</h3>
+                <p class="card-text">Flask даёт разработчику свободу выбора инструментов и библиотек для решения конкретных задач.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <h3 class="card-title">Масштабируемость</h3>
+                <p class="card-text">Несмотря на минимализм, Flask позволяет создавать сложные и масштабируемые веб-приложения.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %}Контакты - Flask Проект{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-6">
+        <h2>Свяжитесь с нами</h2>
+        <p class="lead">У вас есть вопросы или предложения? Напишите нам!</p>
+        
+        <form>
+            <div class="mb-3">
+                <label for="name" class="form-label">Ваше имя</label>
+                <input type="text" class="form-control" id="name" placeholder="Введите ваше имя">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Введите ваш email">
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Сообщение</label>
+                <textarea class="form-control" id="message" rows="5" placeholder="Введите ваше сообщение"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Отправить</button>
+        </form>
+    </div>
+    
+    <div class="col-md-6">
+        <h2>Наши контакты</h2>
+        <p class="lead">Вы можете найти нас здесь:</p>
+        
+        <ul class="list-unstyled">
+            <li class="mb-3">
+                <strong>Адрес:</strong><br>
+                ул. Примерная, 123, г. Москва, 123456
+            </li>
+            <li class="mb-3">
+                <strong>Телефон:</strong><br>
+                +7 (123) 456-78-90
+            </li>
+            <li class="mb-3">
+                <strong>Email:</strong><br>
+                info@example.com
+            </li>
+            <li class="mb-3">
+                <strong>Часы работы:</strong><br>
+                Пн-Пт: 9:00 - 18:00<br>
+                Сб-Вс: Выходной
+            </li>
+        </ul>
+        
+        <h3 class="mt-4">Следите за нами</h3>
+        <div class="social-icons mt-3">
+            <a href="#" class="btn btn-outline-primary me-2"><i class="bi bi-facebook"></i> Facebook</a>
+            <a href="#" class="btn btn-outline-info me-2"><i class="bi bi-twitter"></i> Twitter</a>
+            <a href="#" class="btn btn-outline-danger"><i class="bi bi-instagram"></i> Instagram</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

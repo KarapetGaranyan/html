@@ -1,0 +1,34 @@
+body {
+    padding-top: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.jumbotron {
+    background-color: #f8f9fa;
+    border-radius: 0.3rem;
+}
+
+.card {
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    margin-top: auto;
+}
+
+/* Стили для активной ссылки в меню */
+.nav-link.active {
+    font-weight: bold;
+    border-bottom: 2px solid white;
+}
+
+/* Стили для карточек блога */
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
