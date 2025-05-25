@@ -29,7 +29,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    return render_template("index.html") # Внутри () пишем название html-файла в кавычках
+    return render_template("base.html") # Внутри () пишем название html-файла в кавычках
 
 
 if __name__ == "__main__":

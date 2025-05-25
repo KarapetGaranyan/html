@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Мой сайт{% endblock %}</title>
+    <style>
+        body { font-family: Arial; margin: 0; padding: 20px; }
+        nav a { margin-right: 10px; text-decoration: none; color: #007bff; }
+        nav a:hover { color: #0056b3; }
+        .content { margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <h1>Мой сайт</h1>
+    <nav>
+        <a href="{{ url_for('home') }}">Главная</a>
+        <a href="{{ url_for('about') }}">О нас</a>
+    </nav>
+
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer>&copy; 2025 Мой сайт</footer>
+</body>
+</html>

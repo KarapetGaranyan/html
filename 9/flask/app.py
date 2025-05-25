@@ -14,7 +14,7 @@ def index():
     formatted_time = current_datetime.strftime('%H:%M:%S')
 
     # Передача данных в шаблон
-    return render_template('index.html',
+    return render_template('base.html',
                            date=formatted_date,
                            time=formatted_time)
 
