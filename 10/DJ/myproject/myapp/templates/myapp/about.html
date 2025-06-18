@@ -1,0 +1,109 @@
+<!-- templates/myapp/about.html -->
+{% extends 'myapp/base.html' %}
+
+{% block title %}{{ title }} - Мой сайт{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-info text-white">
+                <h1><i class="bi bi-info-circle"></i> {{ title }}</h1>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h3>{{ content }}</h3>
+                        <p class="lead">
+                            Мы - команда профессионалов, специализирующихся на создании
+                            высококачественных веб-решений и IT-услуг.
+                        </p>
+                        <p>
+                            С момента основания нашей компании мы помогли более чем 150 клиентам
+                            достичь их бизнес-целей через инновационные технологические решения.
+                        </p>
+
+                        <h4><i class="bi bi-target"></i> Наша миссия</h4>
+                        <p>
+                            Предоставлять клиентам передовые технологические решения,
+                            которые помогают им развивать свой бизнес и достигать успеха в цифровом мире.
+                        </p>
+
+                        <h4><i class="bi bi-eye"></i> Наше видение</h4>
+                        <p>
+                            Стать ведущей IT-компанией, известной своими инновационными решениями
+                            и исключительным качеством обслуживания клиентов.
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-light">
+                            <div class="card-header">
+                                <h5><i class="bi bi-award"></i> Наши ценности</h5>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">
+                                        <i class="bi bi-check-circle text-success"></i>
+                                        <strong>Качество</strong> - в каждом проекте
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-check-circle text-success"></i>
+                                        <strong>Инновации</strong> - современные технологии
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-check-circle text-success"></i>
+                                        <strong>Клиентоориентированность</strong> - ваш успех
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="bi bi-check-circle text-success"></i>
+                                        <strong>Надежность</strong> - проверенные решения
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Team Section -->
+<div class="row mt-4">
+    <div class="col-12">
+        <h2><i class="bi bi-people"></i> Наша команда</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4 mb-3">
+        <div class="card">
+            <div class="card-body text-center">
+                <i class="bi bi-person-circle display-1 text-primary mb-3"></i>
+                <h5 class="card-title">Иван Петров</h5>
+                <p class="card-text text-muted">Ведущий разработчик</p>
+                <p class="small">Специалист по Python и Django с опытом работы более 7 лет</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="card">
+            <div class="card-body text-center">
+                <i class="bi bi-person-circle display-1 text-success mb-3"></i>
+                <h5 class="card-title">Мария Сидорова</h5>
+                <p class="card-text text-muted">UI/UX Дизайнер</p>
+                <p class="small">Создает красивые и удобные интерфейсы для веб-приложений</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="card">
+            <div class="card-body text-center">
+                <i class="bi bi-person-circle display-1 text-warning mb-3"></i>
+                <h5 class="card-title">Алексей Иванов</h5>
+                <p class="card-text text-muted">Менеджер проектов</p>
+                <p class="small">Обеспечивает своевременную и качественную реализацию проектов</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

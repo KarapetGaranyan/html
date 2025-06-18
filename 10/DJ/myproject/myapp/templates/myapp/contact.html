@@ -1,0 +1,206 @@
+<!-- templates/myapp/contact.html -->
+{% extends 'myapp/base.html' %}
+
+{% block title %}{{ title }} - Мой сайт{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-warning text-dark">
+                <h1><i class="bi bi-envelope"></i> {{ title }}</h1>
+            </div>
+            <div class="card-body">
+                <p class="lead">
+                    Свяжитесь с нами любым удобным способом. Мы всегда готовы ответить
+                    на ваши вопросы и обсудить ваш проект.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h4><i class="bi bi-chat-dots"></i> Отправить сообщение</h4>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="name" class="form-label">Ваше имя</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Телефон</label>
+                        <input type="tel" class="form-control" id="phone">
+                    </div>
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">Тема</label>
+                        <select class="form-select" id="subject">
+                            <option selected>Выберите тему...</option>
+                            <option value="web">Веб-разработка</option>
+                            <option value="mobile">Мобильные приложения</option>
+                            <option value="seo">SEO продвижение</option>
+                            <option value="design">Дизайн</option>
+                            <option value="other">Другое</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Сообщение</label>
+                        <textarea class="form-control" id="message" rows="5" required></textarea>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="agree" required>
+                        <label class="form-check-label" for="agree">
+                            Я согласен с обработкой персональных данных
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-send"></i> Отправить сообщение
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h4><i class="bi bi-info-circle"></i> Контактная информация</h4>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <h6><i class="bi bi-geo-alt-fill text-primary"></i> Адрес</h6>
+                    <p class="text-muted">{{ address }}</p>
+                </div>
+                <div class="mb-3">
+                    <h6><i class="bi bi-telephone-fill text-success"></i> Телефон</h6>
+                    <p class="text-muted">{{ phone }}</p>
+                </div>
+                <div class="mb-3">
+                    <h6><i class="bi bi-envelope-fill text-warning"></i> Email</h6>
+                    <p class="text-muted">{{ email }}</p>
+                </div>
+                <div class="mb-3">
+                    <h6><i class="bi bi-clock-fill text-info"></i> Время работы</h6>
+                    <p class="text-muted">
+                        Пн-Пт: 9:00 - 18:00<br>
+                        Сб-Вс: 10:00 - 16:00
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mt-3">
+            <div class="card-header">
+                <h4><i class="bi bi-share"></i> Социальные сети</h4>
+            </div>
+            <div class="card-body text-center">
+                <a href="#" class="btn btn-primary btn-sm me-2 mb-2">
+                    <i class="bi bi-facebook"></i> Facebook
+                </a>
+                <a href="#" class="btn btn-info btn-sm me-2 mb-2">
+                    <i class="bi bi-twitter"></i> Twitter
+                </a>
+                <a href="#" class="btn btn-danger btn-sm me-2 mb-2">
+                    <i class="bi bi-instagram"></i> Instagram
+                </a>
+                <a href="#" class="btn btn-success btn-sm mb-2">
+                    <i class="bi bi-linkedin"></i> LinkedIn
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Map Section -->
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4><i class="bi bi-map"></i> Как нас найти</h4>
+            </div>
+            <div class="card-body">
+                <div class="ratio ratio-21x9">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2244.426641252939!2d37.61768531592344!3d55.75222538055647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a50b315e573%3A0xa886bf5a3d9b2e68!2z0JrRgNCw0YHQvdCw0Y8g0L_Qu9C-0YnQsNC00Yw!5e0!3m2!1sru!2sru!4v1639123456789!5m2!1sru!2sru"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="mt-3">
+                    <p class="text-muted">
+                        <strong>Ближайшее метро:</strong> Красная площадь<br>
+                        <strong>Парковка:</strong> Доступна платная парковка<br>
+                        <strong>Общественный транспорт:</strong> Автобусы №1, 12, 144
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FAQ Section -->
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4><i class="bi bi-question-circle"></i> Часто задаваемые вопросы</h4>
+            </div>
+            <div class="card-body">
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                Сколько времени занимает разработка сайта?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Время разработки зависит от сложности проекта. Простой лендинг - 1-2 недели,
+                                корпоративный сайт - 3-4 недели, интернет-магазин - 1-2 месяца.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                Предоставляете ли вы техническую поддержку?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Да, мы предоставляем техническую поддержку. Срок поддержки зависит от выбранного
+                                тарифного плана - от 1 до 6 месяцев бесплатно.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                Можно ли вносить изменения в процессе разработки?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Конечно! Мы работаем по гибкой методологии и готовы вносить изменения
+                                на любом этапе разработки. Обсуждаем все детали с клиентом.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

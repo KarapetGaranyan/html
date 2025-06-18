@@ -1,0 +1,151 @@
+<!-- templates/myapp/services.html -->
+{% extends 'myapp/base.html' %}
+
+{% block title %}{{ title }} - Мой сайт{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-success text-white">
+                <h1><i class="bi bi-gear"></i> {{ title }}</h1>
+            </div>
+            <div class="card-body">
+                <p class="lead">
+                    Мы предлагаем широкий спектр IT-услуг для развития вашего бизнеса.
+                    Наша команда экспертов готова воплотить в жизнь ваши самые смелые идеи.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    {% for service in services %}
+    <div class="col-md-6 mb-4">
+        <div class="card h-100">
+            <div class="card-header">
+                {% if forloop.counter == 1 %}
+                    <h5><i class="bi bi-code-slash text-primary"></i> {{ service }}</h5>
+                {% elif forloop.counter == 2 %}
+                    <h5><i class="bi bi-phone text-success"></i> {{ service }}</h5>
+                {% elif forloop.counter == 3 %}
+                    <h5><i class="bi bi-search text-warning"></i> {{ service }}</h5>
+                {% else %}
+                    <h5><i class="bi bi-palette text-info"></i> {{ service }}</h5>
+                {% endif %}
+            </div>
+            <div class="card-body">
+                {% if forloop.counter == 1 %}
+                    <p>Создание современных веб-сайтов и веб-приложений с использованием последних технологий:</p>
+                    <ul>
+                        <li>Корпоративные сайты</li>
+                        <li>Интернет-магазины</li>
+                        <li>Веб-приложения</li>
+                        <li>CMS системы</li>
+                    </ul>
+                {% elif forloop.counter == 2 %}
+                    <p>Разработка мобильных приложений для различных платформ:</p>
+                    <ul>
+                        <li>iOS приложения</li>
+                        <li>Android приложения</li>
+                        <li>Кроссплатформенные решения</li>
+                        <li>Обновление существующих приложений</li>
+                    </ul>
+                {% elif forloop.counter == 3 %}
+                    <p>Комплексное продвижение вашего сайта в поисковых системах:</p>
+                    <ul>
+                        <li>Техническая оптимизация</li>
+                        <li>Контент-маркетинг</li>
+                        <li>Анализ конкурентов</li>
+                        <li>Отчетность и аналитика</li>
+                    </ul>
+                {% else %}
+                    <p>Создание привлекательных и функциональных пользовательских интерфейсов:</p>
+                    <ul>
+                        <li>UI/UX дизайн</li>
+                        <li>Прототипирование</li>
+                        <li>Адаптивный дизайн</li>
+                        <li>Брендинг и айдентика</li>
+                    </ul>
+                {% endif %}
+                <div class="mt-3">
+                    <a href="{% url 'myapp:contact' %}" class="btn btn-primary">
+                        <i class="bi bi-envelope"></i> Заказать услугу
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- Pricing Section -->
+<div class="row mt-5">
+    <div class="col-12">
+        <h2><i class="bi bi-currency-dollar"></i> Тарифные планы</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4 mb-3">
+        <div class="card">
+            <div class="card-header bg-light text-center">
+                <h4>Базовый</h4>
+                <h2 class="text-primary">от 15 000 ₽</h2>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled">
+                    <li><i class="bi bi-check text-success"></i> Лендинг страница</li>
+                    <li><i class="bi bi-check text-success"></i> Адаптивный дизайн</li>
+                    <li><i class="bi bi-check text-success"></i> Базовая SEO оптимизация</li>
+                    <li><i class="bi bi-check text-success"></i> Техническая поддержка 1 месяц</li>
+                </ul>
+                <div class="text-center">
+                    <a href="{% url 'myapp:contact' %}" class="btn btn-outline-primary">Выбрать план</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="card border-primary">
+            <div class="card-header bg-primary text-white text-center">
+                <h4>Стандартный</h4>
+                <h2>от 45 000 ₽</h2>
+                <span class="badge bg-warning">Популярный</span>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled">
+                    <li><i class="bi bi-check text-success"></i> Многостраничный сайт</li>
+                    <li><i class="bi bi-check text-success"></i> CMS система</li>
+                    <li><i class="bi bi-check text-success"></i> Интеграция с соц. сетями</li>
+                    <li><i class="bi bi-check text-success"></i> Полная SEO оптимизация</li>
+                    <li><i class="bi bi-check text-success"></i> Техническая поддержка 3 месяца</li>
+                </ul>
+                <div class="text-center">
+                    <a href="{% url 'myapp:contact' %}" class="btn btn-primary">Выбрать план</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="card">
+            <div class="card-header bg-dark text-white text-center">
+                <h4>Премиум</h4>
+                <h2>от 85 000 ₽</h2>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled">
+                    <li><i class="bi bi-check text-success"></i> Веб-приложение</li>
+                    <li><i class="bi bi-check text-success"></i> Интернет-магазин</li>
+                    <li><i class="bi bi-check text-success"></i> Личный кабинет пользователей</li>
+                    <li><i class="bi bi-check text-success"></i> Интеграция с платежными системами</li>
+                    <li><i class="bi bi-check text-success"></i> Техническая поддержка 6 месяцев</li>
+                </ul>
+                <div class="text-center">
+                    <a href="{% url 'myapp:contact' %}" class="btn btn-outline-dark">Выбрать план</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

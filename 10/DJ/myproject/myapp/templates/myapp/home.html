@@ -1,0 +1,87 @@
+<!-- templates/myapp/home.html -->
+{% extends 'myapp/base.html' %}
+
+{% block title %}{{ title }} - Мой сайт{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <!-- Hero Section -->
+        <div class="jumbotron bg-primary text-white p-5 rounded mb-4">
+            <div class="container-fluid py-5">
+                <h1 class="display-4"><i class="bi bi-house-heart"></i> {{ title }}</h1>
+                <p class="lead">{{ content }}</p>
+                <hr class="my-4">
+                <p>Профессиональные решения для вашего бизнеса</p>
+                <a class="btn btn-light btn-lg" href="{% url 'myapp:services' %}" role="button">
+                    <i class="bi bi-arrow-right"></i> Узнать больше
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="bi bi-code-slash display-4 text-primary mb-3"></i>
+                <h5 class="card-title">Веб-разработка</h5>
+                <p class="card-text">Создаем современные и функциональные веб-сайты</p>
+                <a href="{% url 'myapp:services' %}" class="btn btn-primary">Подробнее</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="bi bi-phone display-4 text-success mb-3"></i>
+                <h5 class="card-title">Мобильные приложения</h5>
+                <p class="card-text">Разработка приложений для iOS и Android</p>
+                <a href="{% url 'myapp:services' %}" class="btn btn-success">Подробнее</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="bi bi-search display-4 text-warning mb-3"></i>
+                <h5 class="card-title">SEO оптимизация</h5>
+                <p class="card-text">Продвижение сайтов в поисковых системах</p>
+                <a href="{% url 'myapp:services' %}" class="btn btn-warning">Подробнее</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Statistics Section -->
+<div class="row mt-5">
+    <div class="col-12">
+        <div class="card bg-light">
+            <div class="card-header">
+                <h4><i class="bi bi-graph-up"></i> Наши достижения</h4>
+            </div>
+            <div class="card-body">
+                <div class="row text-center">
+                    <div class="col-md-3">
+                        <h2 class="text-primary">150+</h2>
+                        <p>Выполненных проектов</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h2 class="text-success">98%</h2>
+                        <p>Довольных клиентов</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h2 class="text-warning">5</h2>
+                        <p>Лет опыта</p>
+                    </div>
+                    <div class="col-md-3">
+                        <h2 class="text-info">24/7</h2>
+                        <p>Поддержка клиентов</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
