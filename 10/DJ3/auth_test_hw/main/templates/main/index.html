@@ -1,0 +1,36 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Главная - Auth Test{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1>Добро пожаловать в AuthTest!</h1>
+    
+    {% if user.is_authenticated %}
+        <p>Привет, <strong>{{ user.username }}</strong>! Рады видеть вас снова.</p>
+        <p>Это главная страница нашего тестового приложения для аутентификации Django.</p>
+        
+        <div style="margin-top: 2rem;">
+            <a href="{% url 'main:profile' %}" class="btn">Перейти в профиль</a>
+        </div>
+    {% else %}
+        <p>Это главная страница нашего тестового приложения для аутентификации Django.</p>
+        <p>Для доступа к дополнительным функциям необходимо войти в систему.</p>
+        
+        <div style="margin-top: 2rem;">
+            <a href="{% url 'main:login' %}" class="btn">Войти в систему</a>
+        </div>
+    {% endif %}
+</div>
+
+<div class="card">
+    <h2>О проекте</h2>
+    <p>Этот проект демонстрирует базовую реализацию системы аутентификации в Django, включающую:</p>
+    <ul>
+        <li>Регистрацию пользователей</li>
+        <li>Вход и выход из системы</li>
+        <li>Защищенные страницы</li>
+        <li>Навигацию с учетом статуса аутентификации</li>
+    </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Профиль - Auth Test{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1>Профиль пользователя</h1>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem;">
+        <div>
+            <h3>Информация о пользователе</h3>
+            <p><strong>Имя пользователя:</strong> {{ user.username }}</p>
+            <p><strong>Email:</strong> {{ user.email|default:"Не указан" }}</p>
+            <p><strong>Имя:</strong> {{ user.first_name|default:"Не указано" }}</p>
+            <p><strong>Фамилия:</strong> {{ user.last_name|default:"Не указана" }}</p>
+            <p><strong>Дата регистрации:</strong> {{ user.date_joined|date:"d.m.Y H:i" }}</p>
+            <p><strong>Последний вход:</strong> {{ user.last_login|date:"d.m.Y H:i"|default:"Никогда" }}</p>
+        </div>
+        
+        <div>
+            <h3>Статистика</h3>
+            <p><strong>Статус:</strong> 
+                {% if user.is_active %}
+                    <span style="color: green;">Активен</span>
+                {% else %}
+                    <span style="color: red;">Неактивен</span>
+                {% endif %}
+            </p>
+            <p><strong>Права администратора:</strong>
+                {% if user.is_staff %}
+                    <span style="color: blue;">Да</span>
+                {% else %}
+                    <span style="color: gray;">Нет</span>
+                {% endif %}
+            </p>
+            <p><strong>Суперпользователь:</strong>
+                {% if user.is_superuser %}
+                    <span style="color: red;">Да</span>
+                {% else %}
+                    <span style="color: gray;">Нет</span>
+                {% endif %}
+            </p>
+        </div>
+    </div>
+    
+    <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #e1e1e1;">
+        <p>Это защищенная страница, доступная только авторизованным пользователям.</p>
+
+        <!-- Замена ссылки на кнопку с POST-запросом -->
+        <form method="post" action="{% url 'main:logout' %}" style="display: inline;">
+            {% csrf_token %}
+            <button type="submit" class="btn">Выйти из системы</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
