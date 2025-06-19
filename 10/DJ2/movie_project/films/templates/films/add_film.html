@@ -1,0 +1,72 @@
+{% extends 'films/base.html' %}
+
+{% block title %}Добавить фильм{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header text-center py-4">
+                <h2 class="mb-0">🎬 Добавить новый фильм</h2>
+                <p class="text-muted mb-0">Поделитесь своим мнением о фильме</p>
+            </div>
+            <div class="card-body p-5">
+                <form method="post">
+                    {% csrf_token %}
+                    
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">
+                            📽️ Название фильма
+                        </label>
+                        {{ form.title }}
+                        {% if form.title.errors %}
+                            <div class="text-danger mt-1">
+                                {% for error in form.title.errors %}
+                                    <small>{{ error }}</small>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">
+                            📝 Описание фильма
+                        </label>
+                        {{ form.description }}
+                        {% if form.description.errors %}
+                            <div class="text-danger mt-1">
+                                {% for error in form.description.errors %}
+                                    <small>{{ error }}</small>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">
+                            ⭐ Отзыв
+                        </label>
+                        {{ form.review }}
+                        {% if form.review.errors %}
+                            <div class="text-danger mt-1">
+                                {% for error in form.review.errors %}
+                                    <small>{{ error }}</small>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            ✨ Добавить фильм
+                        </button>
+                        <a href="{% url 'film_list' %}" class="btn btn-outline-secondary">
+                            ← Вернуться к списку
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
