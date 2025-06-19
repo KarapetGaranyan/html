@@ -37,6 +37,12 @@
                         <i class="bi bi-envelope"></i> Контакты
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if request.resolver_match.url_name == 'news_home' %}active{% endif %}"
+                       href="{% url 'news_home' %}">
+                        <i class="bi bi-newspaper"></i> Новости
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
