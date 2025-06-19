@@ -39,6 +39,7 @@
             list-style: none;
             margin: 0;
             padding: 0;
+            align-items: center;
         }
         .nav-links a {
             color: white;
@@ -49,6 +50,20 @@
         }
         .nav-links a:hover {
             background-color: rgba(255, 255, 255, 0.2);
+        }
+        .logout-btn {
+            background: none !important;
+            border: none !important;
+            color: white !important;
+            cursor: pointer !important;
+            padding: 0.5rem 1rem !important;
+            border-radius: 4px !important;
+            transition: background-color 0.3s !important;
+            font-family: inherit !important;
+            font-size: inherit !important;
+        }
+        .logout-btn:hover {
+            background-color: rgba(255, 255, 255, 0.2) !important;
         }
         main {
             padding: 2rem 0;
@@ -84,23 +99,6 @@
             margin-bottom: 0.5rem;
             font-weight: 500;
         }
-
-        .logout-btn {
-            background: none !important;
-            border: none !important;
-            color: white !important;
-            cursor: pointer !important;
-            padding: 0.5rem 1rem !important;
-            border-radius: 4px !important;
-            transition: background-color 0.3s !important;
-            font-family: inherit !important;
-            font-size: inherit !important;
-        }
-
-        .logout-btn:hover {
-            background-color: rgba(255, 255, 255, 0.2) !important;
-        }
-
         input[type="text"], input[type="password"] {
             width: 100%;
             padding: 0.75rem;
@@ -108,6 +106,7 @@
             border-radius: 4px;
             font-size: 1rem;
             transition: border-color 0.3s;
+            box-sizing: border-box;
         }
         input[type="text"]:focus, input[type="password"]:focus {
             outline: none;
@@ -121,10 +120,25 @@
             border-radius: 4px;
             margin-bottom: 1rem;
         }
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
         .alert-info {
             background-color: #d1ecf1;
             color: #0c5460;
             border: 1px solid #bee5eb;
+        }
+        .alert-warning {
+            background-color: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+        .alert-error, .alert-danger {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
         }
         footer {
             background-color: #343a40;
@@ -145,13 +159,14 @@
                     <li>
                         <form method="post" action="{% url 'main:logout' %}" style="display: inline;">
                             {% csrf_token %}
-                            <button type="submit" style="background: none; border: none; color: white; cursor: pointer; padding: 0.5rem 1rem; border-radius: 4px; transition: background-color 0.3s;">
+                            <button type="submit" class="logout-btn">
                                 Выход ({{ user.username }})
                             </button>
                         </form>
                     </li>
                 {% else %}
                     <li><a href="{% url 'main:login' %}">Вход</a></li>
+                    <li><a href="{% url 'main:register' %}">Регистрация</a></li>
                 {% endif %}
             </ul>
         </div>
@@ -176,7 +191,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 AuthTest. Тестовый проект Django.</p>
+            <p>&copy; 2025 AuthTest. Тестовый проект Django с регистрацией и аутентификацией.</p>
         </div>
     </footer>
 </body>

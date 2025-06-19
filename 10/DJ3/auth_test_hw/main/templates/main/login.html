@@ -38,8 +38,10 @@
     </form>
 
     <div style="margin-top: 2rem; text-align: center; padding-top: 1rem; border-top: 1px solid #e1e1e1;">
-        <p>Для тестирования можно создать пользователя через админ-панель Django:</p>
-        <p><code>python manage.py createsuperuser</code></p>
+        <p>Нет аккаунта? <a href="{% url 'main:register' %}" style="color: #667eea; text-decoration: none;">Зарегистрироваться</a></p>
+        <hr style="margin: 1rem 0; border: none; border-top: 1px solid #e1e1e1;">
+        <p style="font-size: 0.875rem; color: #6c757d;">Для тестирования можно создать суперпользователя:</p>
+        <p style="font-size: 0.875rem;"><code>python manage.py createsuperuser</code></p>
     </div>
 </div>
 {% endblock %}

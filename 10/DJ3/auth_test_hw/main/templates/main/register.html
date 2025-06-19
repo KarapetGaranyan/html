@@ -1,0 +1,69 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Регистрация - Auth Test{% endblock %}
+
+{% block content %}
+<div class="card" style="max-width: 500px; margin: 0 auto;">
+    <h1>Регистрация</h1>
+    
+    {% if form.errors %}
+        <div class="alert" style="background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; margin-bottom: 1rem;">
+            <strong>Ошибки при регистрации:</strong>
+            {% for field, errors in form.errors.items %}
+                <div style="margin-top: 0.5rem;">
+                    {% if field != '__all__' %}
+                        <strong>{{ field|title }}:</strong>
+                    {% endif %}
+                    {% for error in errors %}
+                        <p style="margin: 0.25rem 0;">{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+    
+    <form method="post">
+        {% csrf_token %}
+        
+        <div class="form-group">
+            <label for="{{ form.username.id_for_label }}">Имя пользователя:</label>
+            {{ form.username }}
+            {% if form.username.help_text %}
+                <small style="color: #6c757d; font-size: 0.875rem;">{{ form.username.help_text }}</small>
+            {% endif %}
+        </div>
+        
+        <div class="form-group">
+            <label for="{{ form.password1.id_for_label }}">Пароль:</label>
+            {{ form.password1 }}
+            {% if form.password1.help_text %}
+                <small style="color: #6c757d; font-size: 0.875rem;">{{ form.password1.help_text|safe }}</small>
+            {% endif %}
+        </div>
+        
+        <div class="form-group">
+            <label for="{{ form.password2.id_for_label }}">Подтверждение пароля:</label>
+            {{ form.password2 }}
+            {% if form.password2.help_text %}
+                <small style="color: #6c757d; font-size: 0.875rem;">{{ form.password2.help_text }}</small>
+            {% endif %}
+        </div>
+        
+        <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Зарегистрироваться</button>
+    </form>
+    
+    <div style="margin-top: 2rem; text-align: center; padding-top: 1rem; border-top: 1px solid #e1e1e1;">
+        <p>Уже есть аккаунт? <a href="{% url 'main:login' %}" style="color: #667eea; text-decoration: none;">Войти в систему</a></p>
+    </div>
+</div>
+
+<div class="card" style="max-width: 500px; margin: 2rem auto 0; background-color: #f8f9fa;">
+    <h3 style="color: #495057;">Требования к паролю:</h3>
+    <ul style="color: #6c757d; margin: 0; padding-left: 1.5rem;">
+        <li>Пароль не может быть слишком похож на другую вашу личную информацию</li>
+        <li>Пароль должен содержать как минимум 8 символов</li>
+        <li>Пароль не может быть широко распространенным паролем</li>
+        <li>Пароль не может состоять только из цифр</li>
+    </ul>
+</div>
+{% endblock %}
