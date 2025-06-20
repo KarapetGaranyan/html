@@ -1,5 +1,5 @@
 """
-WSGI config for auth_test_hw project.
+WSGI config for auth_test_hw myproject.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 

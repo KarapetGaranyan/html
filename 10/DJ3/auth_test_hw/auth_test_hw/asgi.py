@@ -1,5 +1,5 @@
 """
-ASGI config for auth_test_hw project.
+ASGI config for auth_test_hw myproject.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 

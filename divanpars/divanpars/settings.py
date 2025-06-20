@@ -1,4 +1,4 @@
-# Scrapy settings for divanpars project
+# Scrapy settings for divanpars myproject
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:

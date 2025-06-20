@@ -1,5 +1,5 @@
 """
-WSGI config for movie_project project.
+WSGI config for movie_project myproject.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
